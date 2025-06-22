@@ -75,8 +75,8 @@ terraform apply, on the other hand, actually provisions the infrastructure defin
 
 ## 🎯 Terraform Interview Questions – Phase 2 (Intermediate Level)
 
-
 ---
+
 
 ✅ 1. How do you use variables in Terraform?
 
@@ -173,6 +173,27 @@ Each workspace has its own state file. However, for larger setups, I prefer dire
 
 
 ---
+✅ 6. Provision a Basic EC2 Instance in AWS
+🎯 Question:
+"Can you write a Terraform configuration to launch a single EC2 instance in us-east-1 region with Ubuntu AMI and a tag 'Environment=Dev'?"
+Answer (Terraform Code):
+'''
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "dev_vm" {
+  ami           = "ami-0c55b159cbfafe1f0"  # Ubuntu AMI (example)
+  instance_type = "t2.micro"
+
+  tags = {
+    Name        = "DevVM"
+    Environment = "Dev"
+  }
+}
+'''
+Explanation for Interview:
+“This is a basic EC2 setup. The AMI is region-specific. In a real project, I’d parameterize region and instance type with variables.”
 
 
 
