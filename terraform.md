@@ -71,7 +71,7 @@ terraform apply, on the other hand, actually provisions the infrastructure defin
 
 ---
 
-### ✅ 1. How do you use variables in Terraform?
+### ✅ 9. How do you use variables in Terraform?
 
 🗣️ **Your Answer**:
 
@@ -95,7 +95,7 @@ Finally, I reference them using `var.instance_type` in my resource definitions. 
 
 ---
 
-### ✅ 2. What are output values in Terraform and how do you use them?
+### ✅ 10. What are output values in Terraform and how do you use them?
 
 🗣️ **Your Answer**:
 
@@ -112,7 +112,7 @@ These outputs are helpful for documentation, debugging, or passing values betwee
 
 ---
 
-### ✅ 3. What are modules in Terraform? Have you worked with them?
+### ✅ 11. What are modules in Terraform? Have you worked with them?
 
 🗣️ **Your Answer**:
 
@@ -131,7 +131,7 @@ Modules make large infrastructures easier to manage and reduce code duplication.
 
 ---
 
-### ✅ 4. What is a remote backend in Terraform and why is it important?
+### ✅ 12. What is a remote backend in Terraform and why is it important?
 
 🗣️ **Your Answer**:
 
@@ -156,7 +156,7 @@ This also includes state locking using DynamoDB to prevent simultaneous changes 
 
 ---
 
-### ✅ 5. What are workspaces in Terraform and when do you use them?
+### ✅ 13. What are workspaces in Terraform and when do you use them?
 
 🗣️ **Your Answer**:
 
@@ -174,7 +174,7 @@ Each workspace has its own state file. However, for larger setups, I prefer dire
 
 ---
 
-### ✅ 6. Provision a Basic EC2 Instance in AWS
+### ✅ 14. Provision a Basic EC2 Instance in AWS
 
 🎯 **Question**:
 "Can you write a Terraform configuration to launch a single EC2 instance in the us-east-1 region with Ubuntu AMI and a tag 'Environment=Dev'?"
@@ -198,7 +198,7 @@ resource "aws_instance" "dev_vm" {
   }
 }
 ```
-### ✅ 7. What is the difference between Terraform and CloudFormation?
+### ✅ 15. What is the difference between Terraform and CloudFormation?
 
 🗣️ **Your Answer**:
 
@@ -206,7 +206,7 @@ resource "aws_instance" "dev_vm" {
 
 ---
 
-### ✅ 8. What is a Terraform plan?
+### ✅ 16. What is a Terraform plan?
 
 🗣️ **Your Answer**:
 
@@ -214,7 +214,7 @@ resource "aws_instance" "dev_vm" {
 
 ---
 
-### ✅ 9. How do you manage secrets (e.g., API keys, passwords) in Terraform?
+### ✅ 17. How do you manage secrets (e.g., API keys, passwords) in Terraform?
 
 🗣️ **Your Answer**:
 
