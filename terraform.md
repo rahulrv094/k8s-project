@@ -179,6 +179,7 @@ Each workspace has its own state file. However, for larger setups, I prefer dire
 
 > "Answer (Terraform Code):
 
+"""
 provider "aws" {
   region = "us-east-1"
 }
@@ -192,7 +193,7 @@ resource "aws_instance" "dev_vm" {
     Environment = "Dev"
   }
 }
-
+"""
 Explanation for Interview:
 “This is a basic EC2 setup. The AMI is region-specific. In a real project, I’d parameterize region and instance type with variables.”"
 
