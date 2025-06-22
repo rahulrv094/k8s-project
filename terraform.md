@@ -198,9 +198,27 @@ resource "aws_instance" "dev_vm" {
   }
 }
 ```
+### ✅ 7. What is the difference between Terraform and CloudFormation?
 
-**Explanation for Interview**:
+🗣️ **Your Answer**:
 
-> "This is a basic EC2 setup. The AMI is region-specific. In a real project, I’d parameterize region and instance type with variables."
+> "Terraform is a cloud-agnostic tool that can provision infrastructure across multiple cloud providers, whereas CloudFormation is specific to AWS. Terraform uses a declarative language (HCL) to define infrastructure, while CloudFormation uses JSON or YAML. Additionally, Terraform has a robust state management feature, whereas CloudFormation manages the state within AWS."
 
-```
+---
+
+### ✅ 8. What is a Terraform plan?
+
+🗣️ **Your Answer**:
+
+> "A Terraform plan is an execution plan that Terraform generates before making any changes to the infrastructure. It shows a preview of the changes Terraform will make (add, modify, delete) based on the current state and the desired configuration. This helps in understanding the impact of changes before actually applying them."
+
+---
+
+### ✅ 9. How do you manage secrets (e.g., API keys, passwords) in Terraform?
+
+🗣️ **Your Answer**:
+
+> "I use services like AWS Secrets Manager or HashiCorp Vault to securely manage secrets in Terraform. These services can securely store secrets and provide them as environment variables or use them directly within Terraform by leveraging the `data` block to pull them into my configuration."
+
+---
+
