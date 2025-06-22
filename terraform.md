@@ -222,3 +222,131 @@ resource "aws_instance" "dev_vm" {
 
 ---
 
+### **Basic Terraform Setup - Interview Q\&A**
+
+---
+
+**Q: What are the essential files in a basic Terraform setup?**
+
+A:
+
+1. **`main.tf`** – Defines the infrastructure resources (e.g., EC2 instances, VPC).
+2. **`variables.tf`** – Declares variables used in the configuration.
+3. **`terraform.tfvars`** – Contains values for the variables defined in `variables.tf`.
+4. **`outputs.tf`** – Defines output values (e.g., instance IP).
+5. **`provider.tf`** – Configures the cloud provider (e.g., AWS).
+
+---
+
+**Q: What does the `main.tf` file do in Terraform?**
+
+A:
+The `main.tf` file is where you define the infrastructure resources like EC2 instances, VPCs, etc. Example:
+
+```hcl
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+  tags = {
+    Name = "MyFirstEC2Instance"
+  }
+}
+```
+
+---
+
+**Q: What is the purpose of the `variables.tf` file?**
+
+A:
+The `variables.tf` file declares variables for the project, making the configuration flexible and reusable. Example:
+
+```hcl
+variable "aws_region" {
+  default = "us-east-1"
+}
+
+variable "instance_type" {
+  default = "t2.micro"
+}
+```
+
+---
+
+**Q: What is the role of the `terraform.tfvars` file?**
+
+A:
+It contains values for the variables defined in `variables.tf`. This file is used for environment-specific values. Example:
+
+```hcl
+aws_region    = "us-east-1"
+instance_type = "t2.micro"
+```
+
+---
+
+**Q: How does the `outputs.tf` file work?**
+
+A:
+It defines output values that Terraform will display after applying the configuration, such as the public IP of an EC2 instance. Example:
+
+```hcl
+output "instance_public_ip" {
+  value = aws_instance.example.public_ip
+}
+```
+
+---
+
+**Q: What is the purpose of the `provider.tf` file?**
+
+A:
+The `provider.tf` file configures the cloud provider (AWS, Azure, etc.). For example, in AWS:
+
+```hcl
+provider "aws" {
+  region = "us-east-1"
+}
+```
+
+---
+
+### **Example Terraform Workflow**:
+
+1. **Initialize Terraform**:
+
+   ```bash
+   terraform init
+   ```
+
+2. **Preview Changes**:
+
+   ```bash
+   terraform plan
+   ```
+
+3. **Apply Configuration**:
+
+   ```bash
+   terraform apply
+   ```
+
+4. **Retrieve Outputs**:
+
+   ```bash
+   terraform output
+   ```
+
+---
+
+### **Summary**:
+
+* **Simple Setup**: Minimal files (`main.tf`, `variables.tf`, `terraform.tfvars`, `outputs.tf`, `provider.tf`) for small environments.
+* **Reusability**: Use variables and `terraform.tfvars` to manage configurations for different environments.
+* **Clear Outputs**: Retrieve valuable information (e.g., instance IP) through outputs.
+
+---
+
